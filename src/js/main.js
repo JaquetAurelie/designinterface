@@ -1,18 +1,25 @@
 const board = document.querySelector("#board");
 
+import image1 from "url:../img/card-1.webp";
+import image2 from "url:../img/card-2.webp";
+import image3 from "url:../img/card-3.webp";
+import image4 from "url:../img/card-4.webp";
+import image5 from "url:../img/card-5.webp";
+import image6 from "url:../img/card-6.webp";
+
 const emojis = [
-  "☀️",
-  "🐸",
-  "🦐",
-  "🪱",
-  "🐌",
-  "🐝",
-  "☀️",
-  "🐸",
-  "🦐",
-  "🪱",
-  "🐌",
-  "🐝",
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
 ];
 
 let firstChoice = null;
@@ -57,6 +64,11 @@ emojis.forEach((emoji) => {
   const card = document.createElement("div");
   card.classList.add("card", "hidden");
   card.dataset.emoji = emoji;
+
+  const img = document.createElement("img");
+  img.src = emoji;
+  img.alt = "";
+  card.appendChild(img);
 
   card.addEventListener("click", () => {
     if (!card.classList.contains("hidden")) {

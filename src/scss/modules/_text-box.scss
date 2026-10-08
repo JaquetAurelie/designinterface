@@ -26,6 +26,7 @@
 .personnage img {
   z-index: -10;
   height: 50vh;
+  user-select: none;
 }
 
 .personnage-conteneur {
