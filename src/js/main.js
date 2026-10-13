@@ -38,7 +38,7 @@ const showMessage = (text) => {
   clearTimeout(messageTimeout);
   messageTimeout = setTimeout(() => {
     message.classList.remove("visible");
-  }, 133500);
+  }, 1500);
 };
 
 function shuffleArray(array) {
@@ -87,8 +87,12 @@ emojis.forEach((emoji) => {
         consecutiveMistakes = 0;
         consecutivePairs++;
         if (consecutivePairs === 2) {
-          showMessage("Trop fort");
+          showMessage("trop fort");
         }
+        if (consecutivePairs === 6) {
+          showMessage("tricheur");
+        }
+
         if (cardsLeftToMatch === 0) {
           window.alert("Bravo !");
         }
@@ -98,15 +102,15 @@ emojis.forEach((emoji) => {
         consecutivePairs = 0;
         consecutiveMistakes = consecutiveMistakes + 1;
 
-        if (consecutiveMistakes === 1) {
-          showMessage("Tu es nul !");
+        if (consecutiveMistakes === 3) {
+          showMessage("T'es nul !");
         }
         if (consecutiveMistakes === 5) {
           showMessage("trop nuuulll");
         }
 
         if (consecutiveMistakes === 8) {
-          showMessage("un peu la honte quand même");
+          showMessage("bon c'est un peu la honte quand même");
         }
         if (consecutiveMistakes === 10) {
           showMessage("tu fais exprès ou quoi?");
